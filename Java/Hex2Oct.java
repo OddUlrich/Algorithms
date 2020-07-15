@@ -21,6 +21,5 @@ public class Hex2Ord {
             }
             System.out.println(num);
         }
-
     }
 }
