@@ -105,6 +105,15 @@ String 是用关键字 final 修饰的，创建的变量会被放入字符串常
 
 
 
+## PriorityQueue<Boxing Type>
+
+* poll()
+* offer(Object)
+* size()
+* peek()
+
+
+
 
 
 ## Arrays

@@ -6,6 +6,10 @@
 
 ## 链表
 
+> 常见结构：单（向）链表、双（向）链表、循环链表、二叉链表（左子女、右兄弟）
+
+
+
 * 快慢指针协同定位
     * 取链表倒数第 k 个结点（两个指针间距为 k）。
     * 判断链表是否为循环链表（快慢指针追逐）。
@@ -54,7 +58,24 @@ public void deleteNode(ListNode node) {
 
 * 倒序相关，可以使用栈的。
     * 从尾到头打印链表。
-    * 反转单链表。
+    
+    * 递归反转单链表。
+    
+    * ```java
+        class Solution {
+            public ListNode reverseList(ListNode head) {
+                if(head == null || head.next == null) {
+                    return head;
+                }
+                ListNode newHead = reverseList(head.next);
+                head.next.next = head;
+                head.next = null;
+                return newHead;
+            }
+        }
+        ```
+    
+    * 迭代反转单链表。
 
 ```java
 public ListNode reverseList(ListNode head) {
@@ -70,7 +91,87 @@ public ListNode reverseList(ListNode head) {
 }
 ```
 
-
-
 * 使用 hash 表 HashSet
     * 判断重复出现的结点
+* 二叉树相关的转化
+    * 最好先转化成数组，通过中间位置的结点进行二分。
+    * 有序链表对应二叉排序树
+* 从链表中删去总和为零的连续结点
+
+```java
+public ListNode removeZeroSumSublists(ListNode head) {
+    ListNode node = new ListNode(0);
+    node.next = head;
+
+    Map<Integer, ListNode> map = new HashMap<>();
+
+    int sum = 0;
+    ListNode p = node;
+    // Map the sum to nodes.
+    while (p != null) {
+        sum += p.val;
+        map.put(sum, p);
+
+        p = p.next;
+    }
+
+    sum = 0;
+    p = node;
+    // If the sum between two nodes equal, then the interval nodes sums up to 0.
+    while (p != null) {
+        sum += p.val;
+        p.next = map.get(sum).next;
+        p = p.next;
+    }
+
+    return node.next;
+}
+```
+
+
+
+
+
+## 队列
+
+> 常见结构：输入输出皆受限的队列、双向队列、输入受限输出不受限的队列、输入不受限输出受限的队列、循环队列、链队列
+
+* 头结点：front
+* 尾结点：rear
+
+
+
+## 树
+
+
+
+* 检查平衡性
+
+    * ```java
+        public boolean isBalanced(TreeNode root) {
+            // 返回树的深度。
+            return dfs(root) != -1;
+        }
+        
+        public int dfs(TreeNode node) {
+            if (node == null) return 0;
+        
+            int leftDep = dfs(node.left);
+            if (leftDep == -1) return -1;
+            int rightDep = dfs(node.right);
+            if (rightDep == -1) return -1;
+        	
+            // 左右子树比较。
+            if (Math.abs(leftDep - rightDep) > 1) return -1;
+        
+            // 把当前根结点计入。
+            return Math.max(leftDep, rightDep) + 1;
+        }
+        ```
+
+        
+
+
+
+
+
