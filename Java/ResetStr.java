@@ -7,6 +7,6 @@ public class ResetStr {
             cs[indices[i]] = s.charAt(i);
         }
 
-        return String.valueOf(data);
+        return String.valueOf(cs);
     }
 }
