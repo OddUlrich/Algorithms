@@ -34,7 +34,7 @@ session 技术是后来衍生出来的，也要使用到 cookie，通常保存�
 
 根据以上流程可知，SessionID 是连接 Cookie 和 Session 的一道桥梁，大部分系统也是根据此原理来验证用户登录状态。
 
-session 通常称为 session cookie，而 cookie 一般又称为 persistent cookie。前者针对单词会话而言，会话结束那它也随之消失；而后者通常是加密后存储于客户端硬盘上的一段文本信息，可能会遭到 cookie 欺骗以及针对 cookie 的脚本攻击，自然在安全性上有所欠缺。
+session 通常称为 session cookie，而 cookie 一般又称为 persistent cookie。前者针对单次会话而言，会话结束那它也随之消失；而后者通常是加密后存储于客户端硬盘上的一段文本信息，可能会遭到 cookie 欺骗以及针对 cookie 的脚本攻击，自然在安全性上有所欠缺。
 
 
 
