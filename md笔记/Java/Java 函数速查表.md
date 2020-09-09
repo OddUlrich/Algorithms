@@ -49,7 +49,7 @@ String 是用关键字 final 修饰的，创建的变量会被放入字符串常
 * length( )
 * capacity( ) // buffer 的容量。
 * charAt(int index)
-* delete(int start, in end)
+* delete(int start, int end)
 * deleteCharAt(int index)
 
 
@@ -67,8 +67,7 @@ String 是用关键字 final 修饰的，创建的变量会被放入字符串常
 * getOrDefault(E key, E default_val)
 * remove(E key)
 * containsKey(E key)
-
-
+* keySet( )
 
 
 
@@ -111,6 +110,17 @@ String 是用关键字 final 修饰的，创建的变量会被放入字符串常
 * offer(Object)
 * size()
 * peek()
+
+不指定 Comparator 时默认为最小堆。重写 Comparator 就能实现大顶堆。
+
+```java
+PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(k, new Comparator<Integer>() {
+    @Override
+    public int compare(Integer o1, Integer o2) {
+        return o2.compareTo(o1);  // 或者 return o2 - o1;
+    }
+});
+```
 
 
 
