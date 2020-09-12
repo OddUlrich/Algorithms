@@ -100,7 +100,7 @@ String 是用关键字 final 修饰的，创建的变量会被放入字符串常
 
 * offer(E val)
 * poll( )
-* 
+* peek( )
 
 
 
@@ -121,6 +121,22 @@ PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(k, new Comparator<In
     }
 });
 ```
+
+
+
+## ArrayList<Boxing Type>
+
+* add(E val)
+* add(int index, E val)
+* set(int index, E val)
+* remove(E val)
+* indexOf(E val)
+* lastIndexOf(E val)
+* contains(E val)
+
+
+
+## LinkedList<Boxing Type>
 
 
 
