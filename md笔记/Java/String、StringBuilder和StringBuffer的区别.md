@@ -56,7 +56,7 @@ public final class String implements java.io.Serializable, Comparable<String>, C
 
 
 
-<u>其中，对于 UTF16 编码的字符串来说，value 的长度取一般就是该字符串的长度；对于 Latin 字符串，则 value 的长度即为字符串的长度。</u>
+<u>其中，对于 UTF16 编码的字符串来说，value 的长度取一半就是该字符串的长度；对于 Latin 字符串，则 value 的长度即为字符串的长度。</u>
 
 
 
@@ -275,7 +275,7 @@ final class StringUTF16 {
 
 * equals 方法先判断是否属于同一个对象，否则再判断两者字符串的长度以及每一个字符是否相等。
 * indexOf 和 lastIndexOf 方法实质上都是遍历找第一个出现的匹配项，一个从头开始找，一个从尾开始找。获取字符串首次出现的下标时，处理思想是：先找到模式串**第一个字符在目标串出现的位置**，然后遍历从该位置往后对应模式串长度的部分，看是否每一个字符串都相等。
-* hashCode 必然去非零值，从 h = 0 开始，按照字符个数依次执行 h = 31 * h + getChar(value, i)。
+* hashCode 必然取非零值，从 h = 0 开始，按照字符个数依次执行 h = 31 * h + getChar(value, i)。
 * substring 内部调用了 Arrays.copyOfRange( ) 并返回结果作为入参，调用 String 的构造函数，返回一个新的 String 对象。
 * strip 方法找出首尾第一个非空格的字符，取子串构建新字符串返回即可。
 * valueOf 方法返回 Object obj 对象自身的 toString( ) 结果。
