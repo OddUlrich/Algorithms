@@ -38,7 +38,6 @@ public class Solution994 {
                 if (pos[0] + dx[i] >= 0 && pos[0] + dx[i] < m
                     && pos[1] + dy[i] >= 0 && pos[1] + dy[i] < n
                     && !visited[pos[0] + dx[i]][pos[1] + dy[i]]) {
-                    q.offer(new int[]{pos[0] + dx[i], pos[1] + dy[i], pos[2] + 1});
                     visited[pos[0] + dx[i]][pos[1] + dy[i]] = true;
                     fresh--;
                 }
