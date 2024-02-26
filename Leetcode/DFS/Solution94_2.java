@@ -5,8 +5,8 @@ import java.util.List;
 
 class Solution94_2 {
     public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> res = new ArrayList<Integer>();
-        Deque<TreeNode> stk = new LinkedList<TreeNode>();
+        List<Integer> res = new ArrayList<>();
+        Deque<TreeNode> stk = new LinkedList<>();
         while (root != null || !stk.isEmpty()) {
             while (root != null) {
                 stk.push(root);
